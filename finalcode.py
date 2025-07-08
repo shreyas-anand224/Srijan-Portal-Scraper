@@ -205,16 +205,16 @@ with sync_playwright() as p:
 
     page.goto("https://srijandefence.gov.in/")
     all_data = []
-
+                                    #***going foward please replace the page number (eg: here they are 120) by the page number you want to stract extraction from
     # Navigate to page 120 before starting extraction
-    print("Navigating to page 120...")
+    print("Navigating to page 120...")   #replace here
     current_page, total_pages = get_current_page_number(page)
     if current_page is None or total_pages is None:
         print("Could not determine current page number. Exiting.")
         browser.close()
         exit()
     page_counter = 0
-    while current_page < 120:
+    while current_page < 120: #replace here
         print(f"Current page: {current_page}, navigating to next page...")
         next_clicked = click_bottom_next_button_and_wait_for_page_change(page)
         if not next_clicked:
@@ -235,14 +235,14 @@ with sync_playwright() as p:
         # Write to Excel every 10 pages and clear all_data
         if page_counter % 10 == 0 and all_data:
             df = pd.DataFrame(all_data)
-            file_exists = os.path.exists("srijan_products_from_120.xlsx")
+            file_exists = os.path.exists("srijan_products_from_120.xlsx") #replace here
             if file_exists:
-                with pd.ExcelWriter("srijan_products_from_120.xlsx", mode='a', engine='openpyxl', if_sheet_exists='overlay') as writer:
+                with pd.ExcelWriter("srijan_products_from_120.xlsx", mode='a', engine='openpyxl', if_sheet_exists='overlay') as writer: #replace 120 here
                     df.to_excel(writer, index=False, header=False, startrow=writer.sheets['Sheet1'].max_row)
             else:
-                with pd.ExcelWriter("srijan_products_from_120.xlsx", mode='w', engine='openpyxl') as writer:
+                with pd.ExcelWriter("srijan_products_from_120.xlsx", mode='w', engine='openpyxl') as writer: #replace here
                     df.to_excel(writer, index=False, header=True)
-            print(f"Saved {len(all_data)} products to srijan_products_from_120.xlsx (batch at page {current_page})")
+            print(f"Saved {len(all_data)} products to srijan_products_from_120.xlsx (batch at page {current_page})") #replace here
             all_data = []
 
         if current_page >= total_pages:
