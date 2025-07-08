@@ -7,7 +7,7 @@ An automated web scraper built using python and playwright
 **Required Libraries** - **Please install these prerequisites in order to run this code**
 
 
-selenium (for browser automation)
+playwright (for browser automation)
 
 pandas (for saving data to Excel)
 
@@ -27,8 +27,8 @@ bash
 Open your terminal or command prompt and run:
 
 **bash
-pip install selenium pandas openpyxl**
-selenium: For browser automation
+pip install pandas openpyxl playwright**
+playwright: For browser automation
 
 pandas: For data manipulation and saving to Excel
 
