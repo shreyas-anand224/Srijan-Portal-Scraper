@@ -1,5 +1,5 @@
 # Srijan-Portal-Scraper
-An automated web scraper built using python and selenium
+An automated web scraper built using python and playwright
 
 
 **Required Libraries** - **Please install these prerequisites in order to run this code**
