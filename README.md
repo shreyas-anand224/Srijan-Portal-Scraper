@@ -1,6 +1,8 @@
 # Srijan-Portal-Scraper
 An automated web scraper built using python and playwright
 
+**IMP: The scraper saves the entries to an excel file every 10 pages(about 400 products) . DO NOT OPEN THE FILES WHEN PROGRAM IS RUNNING**
+
 
 **Required Libraries** - **Please install these prerequisites in order to run this code**
 
